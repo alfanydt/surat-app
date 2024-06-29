@@ -15,7 +15,7 @@
                                 <div class="page-header-icon"><i data-feather="activity"></i></div>
                                 Dashboard
                             </h1>
-                            <div class="page-header-subtitle">Administrator Panel</div>
+                            <div class="page-header-subtitle">Admin</div>
                         </div>
                         <div class="col-12 col-xl-auto mt-4">
                             <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -37,7 +37,7 @@
                                 <div class="col-xl-8 col-xxl-12">
                                     <div class="text-center text-xl-start text-xxl-center mb-4 mb-xl-0 mb-xxl-4">
                                         <h1 class="text-primary">Selamat Datang {{ Auth::user()->name }}!</h1>
-                                        <p class="text-gray-700 mb-0">Di Website Aplikasi Surat Masuk dan Keluar</p>
+                                        <p class="text-gray-700 mb-0">Di Website Aplikasi Surat Menyurat Bank Ekadharma</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="/admin/assets/img/illustrations/at-work.svg" style="max-width: 26rem" /></div>

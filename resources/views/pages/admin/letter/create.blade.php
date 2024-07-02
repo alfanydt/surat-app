@@ -14,7 +14,7 @@
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="file-text"></i></div>
                                 Buat Surat
-                            </h1>
+                            </h1> 
                         </div>
                     </div>
                 </div>

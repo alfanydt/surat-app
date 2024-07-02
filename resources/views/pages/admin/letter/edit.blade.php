@@ -138,6 +138,17 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3 row">
+                                    <label for="letter_no" class="col-sm-3 col-form-label">Disposisi</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control @error('letter_no') is-invalid @enderror" value="{{ $item->disposisi }}" name="disposisi" placeholder="Disposisi" required>
+                                    </div>
+                                    @error('letter_no')
+                                        <div class="invalid-feedback">
+                                            {{ $message; }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3 row">
                                     <label for="letter_file" class="col-sm-3 col-form-label">File</label>
                                     <div class="col-sm-9">
                                         <input type="file" class="form-control @error('letter_file') is-invalid @enderror" value="{{ old('letter_file') }}" name="letter_file">

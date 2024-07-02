@@ -16,6 +16,7 @@ class Letter extends Model
         'regarding',
         'department_id',
         'sender_id',
+        'disposisi',
         'letter_file',
         'letter_type'
     ];
@@ -33,4 +34,10 @@ class Letter extends Model
     {
         return $this->belongsTo(Sender::class, 'sender_id','id');
     }
+
+    // public function disposisis()
+    // {
+    // return $this->hasMany(Disposisi::class);
+    // }
+
 }

@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\SenderController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\DisposisiController;
+use App\Http\Controllers\SuratMasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,22 @@ Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+// Route::get('/register', [AuthController::class, 'registerForm'])->name('register')->middleware('guest');
+// Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
+RRoute::get('/surat-masuk', [SuratMasukController::class, 'index'])->name('surat-masuk.index');
+Route::post('/surat/{surat}/disposisi', [DisposisiController::class, 'store'])->name('disposisi.store');
+//letter
+// Route::resource('letter', LetterController::class);
+// Route::get('letter/{letter}/download', [LetterController::class, 'download_letter'])->name('letter.download');
+
+// Route::prefix('admin')->namespace('Admin')->group(function () {
+//     Route::get('/letter/lembur', [LetterController::class, 'lembur'])->name('letter.lembur');
+// });
 
 //Admin
 Route::prefix('admin')

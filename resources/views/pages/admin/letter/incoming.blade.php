@@ -59,6 +59,7 @@
                                         <th>Tanggal</th>
                                         <th>Departemen</th>
                                         <th>Pengirim</th>
+                                        <th>Disposisi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -91,6 +92,7 @@
           { data: 'letter_date', name: 'letter_date' },
           { data: 'department.name', name: 'department.name' },
           { data: 'sender.name', name: 'sender.name' },
+          { data: 'disposisi', name: 'disposisi' },
           { 
             data: 'action', 
             name: 'action',
@@ -102,5 +104,3 @@
     });
   </script>
 @endpush
-
-

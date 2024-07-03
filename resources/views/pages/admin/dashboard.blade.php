@@ -74,7 +74,7 @@
                                     <div class="text-lg fw-bold">{{ $keluar }}</div>
                                 </div>
                                 <i class="feather-xl text-white-50" data-feather="mail"></i>
-                            </div>Q
+                            </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small">
                             <a class="text-white stretched-link" href="{{ route('surat-keluar') }}">Selengkapnya</a>

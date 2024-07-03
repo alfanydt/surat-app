@@ -9,8 +9,8 @@ use App\Http\Controllers\Admin\SenderController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DepartmentController;
-use App\Http\Controllers\DisposisiController;
-use App\Http\Controllers\SuratMasukController;
+// use App\Http\Controllers\DisposisiController;
+// use App\Http\Controllers\SuratMasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +48,9 @@ Route::post('/register', 'Auth\RegisterController@register');
 
 RRoute::get('/surat-masuk', [SuratMasukController::class, 'index'])->name('surat-masuk.index');
 Route::post('/surat/{surat}/disposisi', [DisposisiController::class, 'store'])->name('disposisi.store');
+
+// Route::get('/letters', [LetterController::class, 'index'])->name('letters.index');
+// Route::post('/letters', [LetterController::class, 'store'])->name('letter.store');
 //letter
 // Route::resource('letter', LetterController::class);
 // Route::get('letter/{letter}/download', [LetterController::class, 'download_letter'])->name('letter.download');
@@ -68,6 +71,12 @@ Route::prefix('admin')
 		    ]);
             Route::get('letter/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
             Route::get('letter/surat-keluar', [LetterController::class, 'outgoing_mail'])->name('surat-keluar');
+            
+            // Route::get('/letter/preview/{id}', [LetterController::class, 'preview'])->name('letter.preview');
+            // Route::get('/letter/edit/{id}', [LetterController::class, 'edit'])->name('letter.edit');
+            // Route::post('/letter/update/{id}', [LetterController::class, 'update'])->name('letter.update');
+            // Route::get('/letter/download/{id}', [LetterController::class, 'download'])->name('letter.download');
+
 
             Route::get('letter/surat/{id}', [LetterController::class, 'show'])->name('detail-surat');
             Route::get('letter/download/{id}', [LetterController::class, 'download_letter'])->name('download-surat');

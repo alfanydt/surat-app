@@ -8,16 +8,22 @@ use Illuminate\Http\Request;
 use App\Models\Department;
 use App\Models\Letter;
 use App\Models\Sender;
+// use App\Traits\PDF;
 
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 
 class LetterController extends Controller
 {
+    // use PDF;
 
     public function index()
     {
-        //
+        // $letters = Letter::all();
+        // $departments = Department::all();
+        // $senders = Sender::all();
+
+        // return view('letters.index', compact('letters', 'departments', 'senders'));
     }
 
     public function create()
@@ -59,6 +65,36 @@ class LetterController extends Controller
         return redirect()
                     ->route($redirect)
                     ->with('success', 'Sukses! 1 Data Berhasil Disimpan');
+        
+        // $validated = $request->validate([
+        //     'letter_date' => 'required|date',
+        //     'to' => 'required|string|max:255',
+        //     'sender_name' => 'required|string|max:255',
+        //     'sender_position' => 'required|string|max:255',
+        //     'letter_body' => 'required|string',
+        //     'approval' => 'required|string|max:255',
+        //     'approval_position' => 'required|string|max:255',
+        //     'file' => 'nullable|file|mimes:pdf|max:2048',
+        // ]);
+    
+        // $filePath = null;
+        // if ($request->hasFile('file')) {
+        //     $filePath = $request->file('file')->store('letters');
+        // }
+    
+        // $letter = Letter::create([
+        //     'letter_date' => $validated['letter_date'],
+        //     'to' => $validated['to'],
+        //     'sender_name' => $validated['sender_name'],
+        //     'sender_position' => $validated['sender_position'],
+        //     'letter_body' => $validated['letter_body'],
+        //     'approval' => $validated['approval'],
+        //     'approval_position' => $validated['approval_position'],
+        //     'file' => $filePath,
+        // ]);
+    
+        // return redirect()->route('letter.preview', $letter->id);
+        
     }
 
     public function incoming_mail()
@@ -94,6 +130,19 @@ class LetterController extends Controller
 
         return view('pages.admin.letter.incoming');
     }
+
+    //tambahan sementara
+    // public function preview($id)
+    // {
+    //     $letter = Letter::findOrFail($id);
+    //     return view('letter.preview', compact('letter'));
+    // }
+
+    // public function edit($id)
+    // {
+    //     $letter = Letter::findOrFail($id);
+    //     return view('letter.edit', compact('letter'));
+    // }
 
     public function outgoing_mail()
     {
@@ -152,12 +201,12 @@ class LetterController extends Controller
         ]);
     }
 
-    public function download_letter($id)
-    {
-        $item = Letter::findOrFail($id);
+    // public function download_letter($id)
+    // {
+    //     $item = Letter::findOrFail($id);
 
-        return Storage::download($item->letter_file);
-    }
+    //     return Storage::download($item->letter_file);
+    // }
 
     public function update(Request $request, $id)
     {
@@ -190,6 +239,41 @@ class LetterController extends Controller
         return redirect()
                     ->route($redirect)
                     ->with('success', 'Sukses! 1 Data Berhasil Diubah');
+        
+        
+    //     $letter = Letter::findOrFail($id);
+
+    // $validated = $request->validate([
+    //     'letter_date' => 'required|date',
+    //     'to' => 'required|string|max:255',
+    //     'sender_name' => 'required|string|max:255',
+    //     'sender_position' => 'required|string|max:255',
+    //     'letter_body' => 'required|string',
+    //     'approval' => 'required|string|max:255',
+    //     'approval_position' => 'required|string|max:255',
+    //     'file' => 'nullable|file|mimes:pdf|max:2048',
+    // ]);
+
+    // $filePath = $letter->file;
+    // if ($request->hasFile('file')) {
+    //     if ($filePath) {
+    //         Storage::delete($filePath);
+    //     }
+    //     $filePath = $request->file('file')->store('letters');
+    // }
+
+    // $letter->update([
+    //     'letter_date' => $validated['letter_date'],
+    //     'to' => $validated['to'],
+    //     'sender_name' => $validated['sender_name'],
+    //     'sender_position' => $validated['sender_position'],
+    //     'letter_body' => $validated['letter_body'],
+    //     'approval' => $validated['approval'],
+    //     'approval_position' => $validated['approval_position'],
+    //     'file' => $filePath,
+    // ]);
+
+    // return redirect()->route('letter.preview', $letter->id);
     }
 
     public function destroy($id)
@@ -210,6 +294,15 @@ class LetterController extends Controller
                     ->route($redirect)
                     ->with('success', 'Sukses! 1 Data Berhasil Dihapus');
     }
+    // use PDF;
+
+    // public function download($id)
+    // {
+    //     $letter = Letter::findOrFail($id);
+    //     $pdf = PDF::loadView('letter.pdf', compact('letter'));
+    //     return $pdf->download('Surat_Permohonan_Upah_Lembur.pdf');
+    // }
+
 }
 
 //     public function lembur()

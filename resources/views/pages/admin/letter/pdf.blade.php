@@ -1,41 +1,36 @@
-<!-- resources/views/letters/pdf.blade.php -->
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
-    <title>Surat Permohonan</title>
+    <title>Surat Permohonan Upah Lembur</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .header { text-align: right; margin-bottom: 20px; }
-        .content { margin: 20px; }
-        .signature { margin-top: 40px; text-align: left; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <p>{{ now()->format('d F Y') }}</p>
-    </div>
-    <div class="content">
-        <p>Kepada Yth :</p>
-        <p>Direksi PT. BPR EKADHARMA BHINARAHARJA</p>
-        <p>Di Kawedanan - Magetan</p>
-        <p>Dengan hormat,</p>
-        <p>Yang bertanda tangan dibawah ini:</p>
-        <p>Nama: {{ $letter->sender->name }}</p>
-        <p>Jabatan: {{ $letter->sender->position }}</p>
-        <p>Sehubungan dengan {{ $letter->regarding }}, dengan ini kami mengajukan permohonan {{ $letter->letter_type }} dengan rincian sebagai berikut:</p>
-        <!-- Add your custom letter content here -->
-    </div>
-    <div class="signature">
-        <p>Disetujui,</p>
-        <p>Kepala Cabang</p>
-        <p>Yang mengajukan,</p>
-        <p>TUTUT SRI WAHYU MURTI, SE</p>
-        <p>Kabag. Operasional</p>
-        <p>Mengetahui dan menyetujui,</p>
-        <p>Direksi</p>
-        <p>DWIATMODJO BAHAGIO, SP</p>
-        <p>Direktur Yang Membawahkan Fungsi Kepatuhan</p>
-    </div>
+    <h1>Surat Permohonan Upah Lembur</h1>
+    <p><strong>Tanggal Surat:</strong> {{ $letter->letter_date }}</p>
+    <p><strong>Kepada Yth:</strong> {{ $letter->to }}</p>
+    <p><strong>Nama Pengirim:</strong> {{ $letter->sender_name }}</p>
+    <p><strong>Jabatan Pengirim:</strong> {{ $letter->sender_position }}</p>
+    <p><strong>Isi Surat:</strong></p>
+    <p>{{ $letter->letter_body }}</p>
+    <p><strong>Disetujui Oleh:</strong> {{ $letter->approval }}</p>
+    <p><strong>Jabatan Penyetuju:</strong> {{ $letter->approval_position }}</p>
 </body>
-</html>
+</html> -->

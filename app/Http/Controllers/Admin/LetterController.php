@@ -25,7 +25,11 @@ class LetterController extends Controller
 
         // return view('letters.index', compact('letters', 'departments', 'senders'));
     }
-
+    public function lembur()
+    {
+        // masih belum bisa
+        return view('pages.admin.letter.lembur');
+    }
     public function create()
     {
         $departments = Department::all();
@@ -190,7 +194,6 @@ class LetterController extends Controller
     public function edit($id)
     {
         $item = Letter::findOrFail($id);
-
         $departments = Department::all();
         $senders = Sender::all();
 
@@ -201,12 +204,12 @@ class LetterController extends Controller
         ]);
     }
 
-    // public function download_letter($id)
-    // {
-    //     $item = Letter::findOrFail($id);
+    public function download_letter($id)
+    {
+        $item = Letter::findOrFail($id);
 
-    //     return Storage::download($item->letter_file);
-    // }
+        return Storage::download($item->letter_file);
+    }
 
     public function update(Request $request, $id)
     {

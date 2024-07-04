@@ -46,7 +46,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'Auth\RegisterController@register');
 
-RRoute::get('/surat-masuk', [SuratMasukController::class, 'index'])->name('surat-masuk.index');
+Route::get('/surat-masuk', [SuratMasukController::class, 'index'])->name('surat-masuk.index');
 Route::post('/surat/{surat}/disposisi', [DisposisiController::class, 'store'])->name('disposisi.store');
 
 // Route::get('/letters', [LetterController::class, 'index'])->name('letters.index');
@@ -55,14 +55,16 @@ Route::post('/surat/{surat}/disposisi', [DisposisiController::class, 'store'])->
 // Route::resource('letter', LetterController::class);
 // Route::get('letter/{letter}/download', [LetterController::class, 'download_letter'])->name('letter.download');
 
-// Route::prefix('admin')->namespace('Admin')->group(function () {
-//     Route::get('/letter/lembur', [LetterController::class, 'lembur'])->name('letter.lembur');
+
 // });
 
 //Admin
 Route::prefix('admin')
         ->middleware('auth')
         ->group(function(){
+
+            Route::get('/letter/lembur', [LetterController::class, 'lembur'])->name('letter.lembur');
+
             Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin-dashboard');
             Route::resource('/department', DepartmentController::class);
             Route::resource('/sender', SenderController::class);
@@ -76,7 +78,7 @@ Route::prefix('admin')
             // Route::get('/letter/edit/{id}', [LetterController::class, 'edit'])->name('letter.edit');
             // Route::post('/letter/update/{id}', [LetterController::class, 'update'])->name('letter.update');
             // Route::get('/letter/download/{id}', [LetterController::class, 'download'])->name('letter.download');
-
+            
 
             Route::get('letter/surat/{id}', [LetterController::class, 'show'])->name('detail-surat');
             Route::get('letter/download/{id}', [LetterController::class, 'download_letter'])->name('download-surat');

@@ -6,10 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class AuthController extends Controller
 {
     // Method to show registration form (if needed)
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
     
     public function register(Request $request)
     {
@@ -35,6 +40,6 @@ class AuthController extends Controller
         // Optional: You can log the user in after registration
         Auth::login($user);
 
-        return redirect('/'); // Redirect to home or any other page after successful registration
+        return redirect('/dashboard'); // Redirect to home or any other page after successful registration
     }
 }

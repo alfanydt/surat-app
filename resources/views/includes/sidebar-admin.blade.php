@@ -37,11 +37,10 @@
                 <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Buat Surat
             </a>
-            <!-- <a class="nav-link {{ (request()->is('admin/letter/create')) ? 'active' : '' }}" href="{{ route('letter.create') }}">
-                <div class="nav-link-icon"><i data-feather="file-text"></i></div>
-                Disposisi
-            </a> -->
-
+            <a class="nav-link" href="#" id="cetak-surat-link">
+                <div class="nav-link-icon"><i data-feather="printer"></i></div>
+                Cetak Surat
+            </a>
             <a class="nav-link {{ (request()->is('admin/letter/surat-masuk')) ? 'active' : '' }}" href="{{ route('surat-masuk') }}">
                 <div class="nav-link-icon"><i data-feather="arrow-right"></i></div>
                 Surat Masuk

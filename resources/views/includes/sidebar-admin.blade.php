@@ -37,7 +37,7 @@
                 <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Buat Surat
             </a>
-            <a class="nav-link" href="#" id="cetak-surat-link">
+            <a class="nav-link" href=" {{ URL::to('admin/letter/cetak') }}" id="cetak-surat-link">
                 <div class="nav-link-icon"><i data-feather="printer"></i></div>
                 Cetak Surat
             </a>

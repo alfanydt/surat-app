@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Surat Permohonan Upah Lembur</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.1/dist/select2-bootstrap-5-theme.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .btn-primary {
+            background-color: #6c5ce7;
+            border-color: #6c5ce7;
+        }
+        .btn-warning {
+            background-color: #fdcb6e;
+            border-color: #fdcb6e;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+            <div class="container-fluid px-4">
+                <div class="page-header-content">
+                    <div class="row align-items-center justify-content-between pt-3">
+                        <div class="col-auto mb-3">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="file-text"></i></div>
+                                Daftar Surat
+                            </h1> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main page content-->
+        <div class="container-fluid px-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>NO</th>
+                                <th>AKSI</th>
+                                <th>NAMA SURAT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" onclick="showForm('formPermohonan')">
+                                        <i class="fas fa-file-word"></i> Buat Surat
+                                    </button>
+                                    <button class="btn btn-warning btn-sm">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                </td>
+                                <td>Surat Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" onclick="showForm('formPermohonan')">
+                                        <i class="fas fa-file-word"></i> Buat Surat
+                                    </button>
+                                    <button class="btn btn-warning btn-sm">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                </td>
+                                <td>Surat Permohonan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Form Pembuatan Surat -->
+            <div id="formPermohonan" style="display: none;">
+                <div class="card mb-4">
+                    <div class="card-header">Form Surat Permohonan Upah Lembur</div>
+                    <div class="card-body">
+                        <form action="/path-to-your-route" method="post" enctype="multipart/form-data">
+                            <div class="mb-3 row">
+                                <label for="letter_date" class="col-sm-3 col-form-label">Tanggal Surat</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="letter_date" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="to" class="col-sm-3 col-form-label">Kepada Yth</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="to" placeholder="Direksi PT. BPR EKADHARMA BHINARAHARJA" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="sender_name" class="col-sm-3 col-form-label">Nama Pengirim</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="sender_name" placeholder="Tutut Sri Wahyu Murti SE" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="sender_position" class="col-sm-3 col-form-label">Jabatan Pengirim</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="sender_position" placeholder="Kabag. Operasional" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="letter_body" class="col-sm-3 col-form-label">Isi Surat</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="letter_body" rows="5" required></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="approval" class="col-sm-3 col-form-label">Disetujui Oleh</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="approval" placeholder="Rian Dian Raga S. Pd" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="approval_position" class="col-sm-3 col-form-label">Jabatan Penyetuju</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="approval_position" placeholder="Kepala Cabang" required>
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3 row">
+                                <label for="file" class="col-sm-3 col-form-label">Upload File (PDF)</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="file" required>
+                                    <div id="file" class="form-text">Ekstensi .pdf</div>
+                                </div>
+                            </div> -->
+                            <div class="mb-3 row">
+                                <div class="col-sm-9 offset-sm-3">
+                                    <button type="submit" class="btn btn-primary">Cetak</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            $(".selectx").select2({
+                theme: "bootstrap-5"
+            });
+        });
+
+        function showForm(formId) {
+            document.getElementById('formPermohonan').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -63,14 +63,17 @@ Route::prefix('admin')
         ->middleware('auth')
         ->group(function(){
 
-            Route::get('/letter/lembur', [LetterController::class, 'lembur'])->name('letter.lembur');
-
+            
             Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin-dashboard');
             Route::resource('/department', DepartmentController::class);
             Route::resource('/sender', SenderController::class);
             Route::resource('/letter', LetterController::class, [
 			    'except' => [ 'show' ]
 		    ]);
+                       
+            Route::post('letter/cetak', [LetterController::class, 'cetak'])->name('cetak');
+            
+            Route::get('letter/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
             Route::get('letter/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
             Route::get('letter/surat-keluar', [LetterController::class, 'outgoing_mail'])->name('surat-keluar');
             

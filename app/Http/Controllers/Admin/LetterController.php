@@ -25,7 +25,7 @@ class LetterController extends Controller
 
         // return view('letters.index', compact('letters', 'departments', 'senders'));
     }
-    public function lembur()
+    public function cetak()
     {
         // masih belum bisa
         return view('pages.admin.letter.lembur');

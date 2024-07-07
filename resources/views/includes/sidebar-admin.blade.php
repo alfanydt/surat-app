@@ -37,7 +37,7 @@
                 <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Buat Surat
             </a>
-            <a class="nav-link" href=" {{ URL::to('admin/letter/cetak') }}" id="cetak-surat-link">
+            <a class="nav-link {{ (request()->is('admin/letter/surat-cetak')) ? 'active' : '' }}" href="{{ route('surat-masuk') }}">
                 <div class="nav-link-icon"><i data-feather="printer"></i></div>
                 Cetak Surat
             </a>
